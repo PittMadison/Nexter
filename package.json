@@ -1,0 +1,33 @@
+{
+  "name": "nexter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build": "npm-run-all compile:sass prefix:css compress:css",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PittMadison/Nexter.git"
+  },
+  "author": "Pitt Madison, karimovpg@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PittMadison/Nexter/issues"
+  },
+  "homepage": "https://github.com/PittMadison/Nexter#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2"
+  }
+}
