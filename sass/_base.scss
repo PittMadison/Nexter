@@ -1,9 +1,8 @@
-
 //MEDIA QUERIES
 
 $largest: 75em; //1200px
 $large: 62.5em; //1000px
-$medium: 56.25em; //900px
+$medium: 50em; //800px
 $small: 37.5em; //600px
 $smallest: 31.25em; //500px
 $tiny: 25em; //400px
@@ -23,8 +22,10 @@ $color-grey-dark-2: #6D5D4B;
 
 // FONT VARIABLES
 
-$font-primary: 'Nunito', sans-serif;
-$font-display: 'Josefin Sans', sans-serif;
+$font-primary: 'Nunito',
+sans-serif;
+$font-display: 'Josefin Sans',
+sans-serif;
 
 *,
 *::before,
@@ -41,6 +42,10 @@ html {
     @media only screen and (max-width: $largest) {
         font-size: 50%;
     }
+
+    @media only screen and (max-width: $small) {
+        font-size: 42.5%;
+    }
 }
 
 body {
@@ -53,10 +58,14 @@ body {
 .container {
     display: grid;
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-    grid-template-columns:  [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
     @media only screen and (max-width: $large) {
         grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
-        grid-template-columns: [full-start]  minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-        }
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $medium) {
+        grid-template-rows: 6rem calc(100vh - 6rem);
+    }
 }
