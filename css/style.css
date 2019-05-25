@@ -24,6 +24,12 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400; }
 
+.heading-1 {
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  font-style: italic;
+  line-height: 1; }
+
 .heading-2 {
   font-size: 4rem;
   font-style: italic;
@@ -98,7 +104,25 @@ body {
 
 .header {
   background-color: #54483A;
-  grid-column: full-start / col-end 6; }
+  grid-column: full-start / col-end 6;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem;
+  padding-top: 4rem;
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content;
+  grid-row-gap: 1.5rem;
+  justify-content: center; }
+  .header__logo {
+    height: 3rem;
+    justify-self: center; }
+  .header__btn {
+    align-self: start;
+    justify-self: start; }
+  .header__seen-logos img {
+    height: 2.5rem; }
 
 .realtors {
   background-color: #101d2c;
@@ -129,7 +153,7 @@ body {
 .story__pictures {
   background-color: #c69963;
   grid-column: full-start / col-end 4;
-  background-image: linear-gradient(to right, rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
+  background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(6, 1fr);
